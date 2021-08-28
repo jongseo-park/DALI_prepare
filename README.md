@@ -99,9 +99,9 @@ Run the script with several arguments as follows.
 
         --renamer y
         (or --importer y)
-        (or --dbmaker y)
+        (or --listmaker y)
 
-You have to select only one function at a time (renamer / importer / dbmaker).
+You have to select only one function at a time (renamer / importer / listmaker).
 
 If you have many PDB files in multiple folders, then use the ***'pdbspath'*** and ***'renamer2'*** arguments as follows.
 
@@ -118,7 +118,7 @@ If you have many PDB files in multiple folders, then use the ***'pdbspath'*** an
 
 2. When you run the ***'importer'***, DALI will make the data files (.dat) from your PDB files. For this function, you have to replace the name of your PDB files as 4 letter codes such as **'abcd'**.
 
-3. When you run the ***'dbmaker'***, the script collect the name of data files (.dat) from your **'datpath'** (./dat/), and write a **'dat.list'** file comprising all of the name of .dat files in the working directory.
+3. When you run the ***'listmaker'***, the script collect the name of data files (.dat) from your **'datpath'** (./dat/), and write a **'dat.list'** file comprising all of the name of .dat files in the working directory.
         
 
 <br/>
@@ -223,9 +223,9 @@ Please refer to the manual in the hompage of DALI server.
 
         --renamer y
         (or --importer y)
-        (or --dbmaker y)
+        (or --listmaker y)
 
-한 번에 한 가지의 기능만을 사용해야 합니다 (renamer / importer / dbmaker).
+한 번에 한 가지의 기능만을 사용해야 합니다 (renamer / importer / listmaker).
 
 만일 많은 PDB 파일을 담고 있는 여러 폴더가 있을 때 파일 이름을 변경하고 싶다면 아래와 같이 ***'pdbspath'*** 와 ***'renamer2'*** 옵션을 이용하세요.
 
@@ -242,7 +242,7 @@ Please refer to the manual in the hompage of DALI server.
 
 2. ***'importer'*** 를 실행시키면, DALI 는 PDB 파일을 이용하여 데이터 파일 (.dat) 을 생성합니다. 이 때, PDB 파일의 이름은 모두 **'abcd'** 와 같은 4 letter code 로 되어있어야만 합니다.
 
-3. ***'dbmaker'*** 를 실행시키면, 스크립트는 모든 데이터 파일 (.dat) 의 이름을 읽어들인 후 **'dat.list'** 파일에 옮겨붙입니다. dat.list 파일은 작업 디렉토리 내에 생성됩니다.
+3. ***'listmaker'*** 를 실행시키면, 스크립트는 모든 데이터 파일 (.dat) 의 이름을 읽어들인 후 **'dat.list'** 파일에 옮겨붙입니다. dat.list 파일은 작업 디렉토리 내에 생성됩니다.
         
 
 <br/>

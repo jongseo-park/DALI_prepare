@@ -17,7 +17,7 @@ parser.add_argument("--pdbspath", required=False, default=None, help="Set the pa
 
 parser.add_argument("--renamer", required=False, default="n", help="Renamer (y/n)")
 parser.add_argument("--importer", required=False, default="n", help="Importer (y/n)")
-parser.add_argument("--dbmaker", required=False, default="n", help="DBmaker (y/n)")
+parser.add_argument("--listmaker", required=False, default="n", help="listmaker (y/n)")
 parser.add_argument("--renamer2", required=False, default="n", help="Renamer2 (y/n)")
 
 args = parser.parse_args()
@@ -75,7 +75,7 @@ def importer (dalipath = args.dalipath, pdbpath = args.pdbpath, datpath = args.d
 
 
 
-def dbmaker (dalipath = args.dalipath, datpath = args.datpath):
+def listmaker (dalipath = args.dalipath, datpath = args.datpath):
 
     file_list = os.listdir (datpath)
     file_list_dats = [file for file in file_list if file.endswith(".dat")]
@@ -85,7 +85,7 @@ def dbmaker (dalipath = args.dalipath, datpath = args.datpath):
             a = i.replace (".dat", "")
             list.write(a + "\n")
 
-    print ("DB maker - Done !")
+    print ("listmaker - Done !")
 
 
 
@@ -142,19 +142,19 @@ def renamer2 (pdbspath = args.pdbspath):
 
 
 if __name__ == '__main__':
-    if args.renamer == "y" and args.importer == "n" and args.dbmaker == "n" and args.renamer2 == "n":
+    if args.renamer == "y" and args.importer == "n" and args.listmaker == "n" and args.renamer2 == "n":
         renamer (pdbpath = args.pdbpath)
 
-    elif args.renamer == "n" and args.importer == "y" and args.dbmaker == "n" and args.renamer2 == "n":
+    elif args.renamer == "n" and args.importer == "y" and args.listmaker == "n" and args.renamer2 == "n":
         importer (dalipath = args.dalipath, pdbpath = args.pdbpath, datpath = args.datpath)
 
-    elif args.renamer == "n" and args.importer == "n" and args.dbmaker == "y" and args.renamer2 == "n":
-        dbmaker (dalipath = args.dalipath, datpath = args.datpath)
+    elif args.renamer == "n" and args.importer == "n" and args.listmaker == "y" and args.renamer2 == "n":
+        listmaker (dalipath = args.dalipath, datpath = args.datpath)
 
-    elif args.renamer == "n" and args.importer == "n" and args.dbmaker == "n" and args.renamer2 == "y":
+    elif args.renamer == "n" and args.importer == "n" and args.listmaker == "n" and args.renamer2 == "y":
         renamer2 (pdbspath = args.pdbspath)
 
     else:
-        print ("Please select only one (renamer or importer or dbmaker")
+        print ("Please select only one (renamer or importer or listmaker")
 
     print ("Finished !")

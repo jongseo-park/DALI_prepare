@@ -73,6 +73,10 @@ If you have many PDB files in multiple folders, please prepare as follows.
         dat/
             empty_directory
 
+You can find the `dali_prepare.py` in this repository, and download it directly or using git clone command.
+
+    git clone https://github.com/jongseo-park/DALI_prepare
+
 <br/>
 
 ### **3. Run the docker container from the image with mounting of the working directory**
@@ -103,7 +107,7 @@ Run the script with several arguments as follows.
 
 You have to select only one function at a time (renamer / importer / listmaker).
 
-If you have many PDB files in multiple folders, then use the ***'pdbspath'*** and ***'renamer2'*** arguments as follows.
+If you have many PDB files in multiple folders, then use the `pdbspath` and `renamer2` arguments as follows.
 
     python3 dali_prepare.py
 
@@ -114,16 +118,16 @@ If you have many PDB files in multiple folders, then use the ***'pdbspath'*** an
         --renamer2 y
 
 
-1. When you run the ***'renamer'*** or ***'renamer2'***, the name of your PDB files will be changed to 4 letter codes without overlap, and the log file for replacement (.txt) will be written in the path to PDB.
+1. When you run the `renamer` or `renamer2`, the name of your PDB files will be changed to 4 letter codes without overlap, and the log file for replacement (.txt) will be written in the path to PDB.
 
-2. When you run the ***'importer'***, DALI will make the data files (.dat) from your PDB files. For this function, you have to replace the name of your PDB files as 4 letter codes such as **'abcd'**.
+2. When you run the `importer`, DALI will make the data files (.dat) from your PDB files. For this function, you have to replace the name of your PDB files as 4 letter codes such as `abcd`.
 
-3. When you run the ***'listmaker'***, the script collect the name of data files (.dat) from your **'datpath'** (./dat/), and write a **'dat.list'** file comprising all of the name of .dat files in the working directory.
+3. When you run the `listmaker`, the script collect the name of data files (.dat) from your `datpath` (./dat/), and write a `dat.list` file comprising all of the name of .dat files in the working directory.
         
 
 <br/>
 
-### **4. Run the DALI**
+### **5. Run the DALI**
 
 The docker image already has a local version of DALI (DaliLite.v5) that supports multicore processing (using openmpi).
 
@@ -197,6 +201,11 @@ Please refer to the manual in the hompage of DALI server.
         dat/
             empty_directory
 
+`dali_prepare.py` 는 이 저장소에서 직접 다운로드 하거나, git clone 명령어를 통해 다운로드할 수 있습니다.
+
+    git clone https://github.com/jongseo-park/DALI_prepare
+
+
 <br/>
 
 ### **3. 도커 이미지를 이용하여 컨테이너 만들고 작업 디렉토리 연결하기**
@@ -227,7 +236,7 @@ Please refer to the manual in the hompage of DALI server.
 
 한 번에 한 가지의 기능만을 사용해야 합니다 (renamer / importer / listmaker).
 
-만일 많은 PDB 파일을 담고 있는 여러 폴더가 있을 때 파일 이름을 변경하고 싶다면 아래와 같이 ***'pdbspath'*** 와 ***'renamer2'*** 옵션을 이용하세요.
+만일 많은 PDB 파일을 담고 있는 여러 폴더가 있을 때 파일 이름을 변경하고 싶다면 아래와 같이 `pdbspath` 와 `renamer2'*** 옵션을 이용하세요.
 
     python3 dali_prepare.py
 
@@ -238,16 +247,16 @@ Please refer to the manual in the hompage of DALI server.
         --renamer2 y
 
 
-1. ***'renamer'*** 또는 ***'renamer2'*** 를 실행시키면, 모든 PDB 파일의 이름이 서로 중복되지 않는 4 letter code 로 변경됩니다. 그리고 이름 변경에 대한 로그파일 (.txt) 이 pdbpath 에 생성됩니다.
+1. `renamer` 또는 `renamer2` 를 실행시키면, 모든 PDB 파일의 이름이 서로 중복되지 않는 4 letter code 로 변경됩니다. 그리고 이름 변경에 대한 로그파일 (.txt) 이 pdbpath 에 생성됩니다.
 
-2. ***'importer'*** 를 실행시키면, DALI 는 PDB 파일을 이용하여 데이터 파일 (.dat) 을 생성합니다. 이 때, PDB 파일의 이름은 모두 **'abcd'** 와 같은 4 letter code 로 되어있어야만 합니다.
+2. `importer` 를 실행시키면, DALI 는 PDB 파일을 이용하여 데이터 파일 (.dat) 을 생성합니다. 이 때, PDB 파일의 이름은 모두 `abcd` 와 같은 4 letter code 로 되어있어야만 합니다.
 
-3. ***'listmaker'*** 를 실행시키면, 스크립트는 모든 데이터 파일 (.dat) 의 이름을 읽어들인 후 **'dat.list'** 파일에 옮겨붙입니다. dat.list 파일은 작업 디렉토리 내에 생성됩니다.
+3. `listmaker` 를 실행시키면, 스크립트는 모든 데이터 파일 (.dat) 의 이름을 읽어들인 후 `dat.list` 파일에 옮겨붙입니다. dat.list 파일은 작업 디렉토리 내에 생성됩니다.
         
 
 <br/>
 
-### **4. DALI 실행**
+### **5. DALI 실행**
 
 도커 이미지에는 다중 코어 프로세싱 작업이 가능하도록 셋업된 (using openmpi) DALI 의 local version 이 설치되어 있습니다.
 

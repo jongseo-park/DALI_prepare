@@ -30,7 +30,7 @@ This repository has a script for the preparing of those things.
 
 ### **1. Pull the docker image**
 
-    docker pull jongseopark/dali
+    docker pull jongseopark/dali:latest
 
 <br/>
 
@@ -85,7 +85,9 @@ You can find the `dali_prepare.py` in this repository, and download it directly 
         -it 
         -v "/path/to/working/directory/:/home/dali/run/" 
         -u dali 
-        jongseopark/dali:v01
+        jongseopark/dali:latest
+
+Be sure that the mounted directory in the docker container have to set in the `/home/dali/` directory that is a essential way to avoid permission problem. 
 
 <br/>
 
@@ -133,11 +135,17 @@ The docker image already has a local version of DALI (DaliLite.v5) that supports
 
 You can use it as follows (np = the number of processors).
 
-    dali.pl --query ./query.list --db ./dat.list --dat1 /working/dir/query_DAT --dat2 /working/dir/DAT/ --np 10 --TITLE title_you_want --clean
+    dali.pl --query ./query.list --db ./dat.list --dat1 /working/dir/query_DAT --dat2 /working/dir/DAT/ --np 10 --TITLE title_you_want --clean --outfmt "summary,alignments,equivalences"
 
 Note that the query.list file has the identical format as the dat.list file.
 
 Please refer to the manual in the hompage of DALI server.
+
+Permission issues often occur when using the docker image of DALI.
+
+When it is occur, in the docker container, make a new directory in the working directory. And, run the `dali.pl` in the new directory.
+
+In addition, please check the permissions of directory, database, and list files.
 
 <br/>
 <br/>
@@ -157,7 +165,7 @@ Please refer to the manual in the hompage of DALI server.
 
 ### **1. 도커 이미지 준비하기**
 
-    docker pull jongseopark/dali
+    docker pull jongseopark/dali:latest
 
 <br/>
 
@@ -214,7 +222,9 @@ Please refer to the manual in the hompage of DALI server.
         -it 
         -v "/path/to/working/directory/:/home/dali/run/" 
         -u dali 
-        jongseopark/dali:v01
+        jongseopark/dali:latest
+
+반드시 도커 컨테이너 내의 마운트 디렉토리는 `/home/dali/` 이하의 경로로 설정해야 합니다. 그래야만 DALI 실행시에 발생하는 권한 문제를 피할 수 있습니다.
 
 <br/>
 
@@ -264,12 +274,20 @@ Please refer to the manual in the hompage of DALI server.
 
 (np = the number of processors).
 
-    dali.pl --query ./query.list --db ./dat.list --dat1 /working/dir/query_DAT --dat2 /working/dir/DAT/ --np 10 --TITLE title_you_want --clean
+    dali.pl --query ./query.list --db ./dat.list --dat1 /working/dir/query_DAT --dat2 /working/dir/DAT/ --np 10 --TITLE title_you_want --clean --outfmt "summary,alignments,equivalences"
 
 
 참고로, query.list 파일은 dat.list 파일과 동일한 형식으로 작성하면 됩니다.
 
+
+
 DALI 의 자세한 사용법은 홈페이지를 참조하세요.
+
+분석시에 권한 문제가 자주 발생합니다. 
+
+만일 권한 문제가 발생한다면, 도커 내에서 작업디렉토리에 경로를 하나 만든 후, 그 안에서 dali.pl 을 실행시켜보세요.
+
+또한, 폴더, 데이터베이스, 리스트 파일의 권한을 다시한번 체크하세요.
 
 <br/>
 <br/>

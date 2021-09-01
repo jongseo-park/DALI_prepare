@@ -144,17 +144,20 @@ def renamer2 (pdbspath = args.pdbspath):
 if __name__ == '__main__':
     if args.renamer == "y" and args.importer == "n" and args.listmaker == "n" and args.renamer2 == "n":
         renamer (pdbpath = args.pdbpath)
+        print ("* Finished !")
 
     elif args.renamer == "n" and args.importer == "y" and args.listmaker == "n" and args.renamer2 == "n":
         importer (dalipath = args.dalipath, pdbpath = args.pdbpath, datpath = args.datpath)
+        print ("* Finished !")
 
     elif args.renamer == "n" and args.importer == "n" and args.listmaker == "y" and args.renamer2 == "n":
         listmaker (dalipath = args.dalipath, datpath = args.datpath)
+        print ("* Finished !")
 
     elif args.renamer == "n" and args.importer == "n" and args.listmaker == "n" and args.renamer2 == "y":
         renamer2 (pdbspath = args.pdbspath)
+        print ("* Finished !")
 
     else:
-        print ("Please select only one (renamer or importer or listmaker")
+        print ("*** Please select only one (renamer or importer or listmaker)")
 
-    print ("Finished !")

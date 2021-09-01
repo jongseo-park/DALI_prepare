@@ -89,6 +89,8 @@ You can find the `dali_prepare.py` in this repository, and download it directly 
 
 Be sure that the mounted directory in the docker container have to set in the `/home/dali/` directory that is a essential way to avoid permission problem. 
 
+In addition, the `-u dali` option is also required to aviod permission problem. 
+
 <br/>
 
 ### **4. Run the script**
@@ -225,6 +227,10 @@ In addition, please check the permissions of directory, database, and list files
         jongseopark/dali:latest
 
 반드시 도커 컨테이너 내의 마운트 디렉토리는 `/home/dali/` 이하의 경로로 설정해야 합니다. 그래야만 DALI 실행시에 발생하는 권한 문제를 피할 수 있습니다.
+
+마찬가지로, `-u dali` 옵션도 권한 문제를 피하기 위한 설정으로 필수적입니다.
+
+
 
 <br/>
 

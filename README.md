@@ -211,9 +211,9 @@ In addition, please check the permissions of directory, database, and list files
         dat/
             empty_directory
 
-`dali_prepare.py` 는 이 저장소에서 직접 다운로드 하거나, git clone 명령어를 통해 다운로드할 수 있습니다.
+`dali_prepare.py` 는 이 저장소에서 직접 다운로드 하거나, wget 명령어를 통해 다운로드할 수 있습니다.
 
-    git clone https://github.com/jongseo-park/DALI_prepare
+    wget https://raw.githubusercontent.com/jongseo-park/DALI_prepare/master/dali_prepare.py
 
 
 <br/>

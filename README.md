@@ -73,9 +73,9 @@ If you have many PDB files in multiple folders, please prepare as follows.
         dat/
             empty_directory
 
-You can find the `dali_prepare.py` in this repository, and download it directly or using git clone command.
+You can find the `dali_prepare.py` in this repository, and download it directly or using wget command.
 
-    git clone https://github.com/jongseo-park/DALI_prepare
+    wget https://raw.githubusercontent.com/jongseo-park/DALI_prepare/master/dali_prepare.py
 
 <br/>
 
